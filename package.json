@@ -2,10 +2,15 @@
   "name": "agro_calc_web",
   "version": "1.0.0",
   "description": "Cálculos agricolas, como regulagem de pulverizadores e outros.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "André Minoro Fusioka",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "jade": "~1.6.0",
+    "path": "^0.12.7"
+  }
 }
