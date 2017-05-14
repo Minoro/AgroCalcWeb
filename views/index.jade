@@ -6,9 +6,52 @@ block baseHead
 
 block header
     include _parts/header
+    .nav-content.green
+        .container
+            ul.tabs.green
+                li.tab
+                    a(href="#volume-pulverizacao") Calculadora
+                li.tab
+                    a(href="#teste2") Prática
 
 block content
-    h1 Olá Mundo
+    .container
+        .row
+            #volume-pulverizacao.col.s12
+                .col.s12
+                    p Insira os valores para o cálculo da vazão do pulverizador de barra:
+                .valores
+                    .bico.col.s12.m6
+                        span Vazão do bico (L/min):
+                        .input-field
+                            input(id="vazao-bico", type="number", min="0", step="0.1")
+                            label(for="vazao-bico") Vazão do bico (L/min)
+                    .distancia-bico.col.s12.m6
+                        span Distância dos bicos (cm):
+                        .input-field
+                            input(id="dist-bico", type="number", min="0", step="0.1")
+                            label(for="dist-bico") Dist. dos bicos (cm)
+                    
+                    .velocidade.col.s12.m6
+                        span Velocidade de trabalho (Km/h):
+                        .input-field
+                            input(id="vel-trabalho", type="number", min="0", step="0.1")
+                            label(for="vel-trabalho") Vel. de trabalho (Km/h)
+                    .medida-area.col.s12.m6
+                        span Unidade de medida de área:
+                        .input-field
+                            select(id="unidade-area")
+                                option(value="", disabled, selected) Escolha uma medida de área
+                                option(value="ha") Hectare
+                                option(value="alqP") Alqueire (Paulista)
+                                option(value="m") Metros Quadrados   
+                    .resultado.col.s12
+                        span Volume de aplicação:
+                        span#resultado-volume preencha os campos para o cálculo resultado do volume
+            
+        #teste2.col.s12 Teste 2!!!    
+    
     
 block scripts
+    script(type="text/javascript", src="dist/js/app/calc_pulverizador.js")
     include _parts/scripts

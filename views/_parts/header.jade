@@ -3,11 +3,11 @@ header
         .nav-wrapper.green
             .container
                 a.brand-logo(href="#") Logo
-                ul#slide-out.side-nav
+                a.button-collapse(href="#", data-activates="mobile-nav")
+                    i.material-icons menu
+                ul#slide-out.hide-on-med-and-down.right
                     li
-                        a(href="#!")
-                            i.material-icons cloud
-                        |First Link With Icon
+                        a(href="#!") Pulverizadores
                     li
                         a(href="#!")
                             Second Link
@@ -17,6 +17,6 @@ header
                     li
                         a.waves-effect(href="#!")
                             Third Link With Waves
-                a.button-collapse(data-activates="slide-out")
-                    i.material-icons menu
-                        
+                ul#mobile-nav.side-nav
+                    li
+                        a(href="#!") Pulverizadores

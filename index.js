@@ -1,10 +1,11 @@
+var contentProvider = require('./content_provider/ContentProvider');
 var express = require('express');
 var path = require('path');
 var routes = require('./routes/index');
 var app = express();
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || contentProvider.CONFIG.DEV_PORT;
 
 
 // view engine setup
@@ -13,13 +14,14 @@ app.set('view engine', 'jade');
 
 app.use('/', routes);
 
+
 //arquivos estáticos
 app.use(express.static('public'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
+    var err = new Error(contentProvider.HTTP_RESPONSE_CODE.NOT_FOUND.DETAIL);
+    err.status = contentProvider.HTTP_RESPONSE_CODE.NOT_FOUND.CODE;
     next(err);
 });
 
