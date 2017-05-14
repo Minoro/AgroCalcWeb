@@ -62,11 +62,27 @@ var CalcPulverizador = (function () {
         return UNIDADE_MEDIDA[unidade];
     }
     
+    /**
+     * Calcula a quantidade de produto a ser colocada no tanque
+     * @param   {Float} [capacidade=0]   capacidade do tanque em litros
+     * @param   {Float} [dosagem=0]      dosagem recomendada do produto em L ou KG
+     * @param   {Float} [volume_calda=1] Calda do pulverizador
+     * @returns {Float} quantidade de produto a ser inserida no tanque de pulverização
+     */
+    var calcQtdProdutoTanque = function (capacidade, dosagem, volume_calda) {
+        var capacidade = capacidade || 0;
+        var dosagem = dosagem || 0;
+        var volume_calda = volume_calda || 1;
+
+        return (capacidade*dosagem)/volume_calda;
+    }
+
     return {
         calcVolumeAplicacao : calcVolumeAplicacao,
         converterParaMetros : converterParaMetros,
         converterDeMetros : converterDeMetros,
-        getUnidadeMedida : getUnidadeMedida
+        getUnidadeMedida : getUnidadeMedida,
+        calcQtdProdutoTanque : calcQtdProdutoTanque
     }
     
 })();

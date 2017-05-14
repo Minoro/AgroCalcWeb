@@ -6,19 +6,58 @@ block baseHead
 
 block header
     include _parts/header
-    .nav-content.green
+    .nav-content
         .container
-            ul.tabs.green
+            ul.tabs.tabs-transparent
                 li.tab
-                    a(href="#volume-pulverizacao") Calculadora
+                    a(href="#dosagem") Dosagem de Produto
                 li.tab
-                    a(href="#teste2") Prática
+                    a(href="#volume-pulverizacao") Volume Pulverização
 
 block content
     .container
         .row
+            #dosagem.col.s12
+                .col.s12
+                    h3 Cálculo de dosagem de defensivo
+                    p Insira os valores para o cálculo de defensivo necessário para aplicação
+                .valores
+                    .capacidade.col.s12.m6
+                        span Capacidade do Tanque (L)
+                        .input-field
+                            input(id="capacidade", type="number", min="0", step="10")
+                            label(for="capacidade") Capacidade (L)
+                    .dose-decomendada.col.s12.m6
+                        span Dose recomendada do produto (Kg/un ou L/un)
+                        .input-field
+                            input(id="dose", type="number", min="0", step="0.5")
+                            label(for="dose") Dose recomendada (Kg ou L)
+                    .volume-pulverizador.col.s12.m6
+                        span Volume de calda do pulverizador (L/un)
+                        .input-field
+                            input(id="volume", type="number", min="0", step="0.1")
+                            label(for="volume") Vol. pulverizador (L/un)
+
+                    .medida-area.col.s12.m6
+                        span Unidade (un) de medida de área:
+                        .input-field
+                            select(id="unidade-area")
+                                option(value="hectare", selected) Hectare
+                                option(value="alqueire_paulista") Alqueire (Paulista)
+                                option(value="m") Metros Quadrados
+
+                     .resultado.col.s12
+                        span Dosagem para aplicação:
+                        span#resultado-dosagem preencha os campos para obter a dosagem da aplicação
+                        span  (L - Kg/
+                            span#area ha
+                            |)
+
+    .container
+        .row
             #volume-pulverizacao.col.s12
                 .col.s12
+                    h3 Cálculo de vazão
                     p Insira os valores para o cálculo da vazão do pulverizador de barra:
                 .valores
                     .bico.col.s12.m6
@@ -51,8 +90,6 @@ block content
                             span#area ha
                             |)
 
-            
-        #teste2.col.s12 Teste 2!!!    
     
     
 block scripts
