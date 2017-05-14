@@ -9,7 +9,7 @@ $( document ).ready(function(){
     $('#volume-pulverizacao #vazao-bico').on('change', calcVolumeAplicacao);
     $('#volume-pulverizacao #vel-trabalho').on('change', calcVolumeAplicacao);
     $('#volume-pulverizacao #volume-pulverizacao').on('change', calcVolumeAplicacao);
-    
+    $('#volume-pulverizacao #unidade-area').on('change', calcVolumeAplicacao);
     
     
 });
@@ -27,10 +27,18 @@ if (typeof CalcPulverizador.calcVolumeAplicacao == 'function'){
         distancia_bico = parseFloat(distancia_bico);
         
         var volume = CalcPulverizador.calcVolumeAplicacao(vazao, velocidade, distancia_bico) || 0;
-        console.log(volume);
+        var unidade = $('#volume-pulverizacao #unidade-area option:selected').val() || "hectare";
+
+        //converte para metros e depois para a unidade escolhida
+        volume = CalcPulverizador.converterParaMetros(volume, "hectare");//resultado original em hectares
+        volume = CalcPulverizador.converterDeMetros(volume, unidade);
+
         $('#volume-pulverizacao #resultado-volume').text(volume.toFixed(2));
         
+        var labelUnidade = CalcPulverizador.getUnidadeMedida(unidade) || "ha";//recupera a unidade para a label do resultado
+        $('#volume-pulverizacao #area').text(labelUnidade);
+
     };
 } else {
-    var calcVolumeAplicacao = function(){return 0;}
+    var calcVolumeAplicacao = function(){return false;}
 }

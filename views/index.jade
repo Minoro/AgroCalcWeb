@@ -41,13 +41,16 @@ block content
                         span Unidade de medida de área:
                         .input-field
                             select(id="unidade-area")
-                                option(value="", disabled, selected) Escolha uma medida de área
-                                option(value="ha") Hectare
-                                option(value="alqP") Alqueire (Paulista)
+                                option(value="hectare", selected) Hectare
+                                option(value="alqueire_paulista") Alqueire (Paulista)
                                 option(value="m") Metros Quadrados   
                     .resultado.col.s12
                         span Volume de aplicação:
                         span#resultado-volume preencha os campos para o cálculo resultado do volume
+                        span  (L/
+                            span#area ha
+                            |)
+
             
         #teste2.col.s12 Teste 2!!!    
     
