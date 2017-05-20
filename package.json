@@ -12,5 +12,8 @@
     "express": "^4.15.2",
     "jade": "~1.6.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "sw-precache": "^5.1.1"
   }
 }
