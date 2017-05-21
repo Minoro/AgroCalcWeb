@@ -1,0 +1,42 @@
+extends layouts/base
+
+block baseHead
+    include _parts/head
+
+block header
+    include _parts/header
+
+block content
+    .container
+        .row
+            .col-s12
+                h3 Sobre o Agro Calc Web
+                
+            #sobre.col-s12
+                p O Agro Calc Web é uma ferramenta para cálculos comumente utilizados no meio agrícola,
+                | assim você não precisa gastar tempo fazendo cálculos desnecessários e pode focar o seu tempo
+                | no que realmente importa: a lavoura.
+
+                p O tempo é algo essencial no meio agrícola, cada minuto é importante, deixe os cálculos
+                | para o Agro Calc Web,  foque na sua produção. O objetivo dessa ferramenta é acelerar
+                | processos massantes para que sua dedicação à lavoura não seja desperdiçada.
+
+                p Novas funcionalidades serão adicionadas em breve.
+
+            #recursos.col-s12
+                p Atualmente o Agro Calc Web conta uma ferramenta para agilizar os cálculos dos pulverizadores
+                | de barra puxados por tratores. Os cálculos disponíveis são:
+
+                ul
+                    li Dosagem de defensivos
+                    li Volume de Pulverização
+                    
+                #dosagem
+                    p A dosagem do defensivo permite verificar qual a quantidade de defensivo que deve ser
+                    | colocado no tanque de pulverização para aplicação. Para utilizar é necessário informar
+                    | a capacidade do tanque, o  volume de calda do pulverizador e a dosagem recomendada do
+                    | produto (em litros ou quilos).
+
+                    p O Volume de Pulverização pode ser utilizado para calcular o volume da calda do
+                    | pulverizador. Basta informar a vazão do bico, distância entre os bicos e a velocidade
+                    | de trabalho. Ao selecionar uma unidade de área os cálculos serão ajustados automaticamente.
