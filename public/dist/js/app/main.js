@@ -7,16 +7,16 @@ $( document ).ready(function(){
     $('select').material_select();
     
     //calculo regulagem do volume de aplicação
-    $('#volume-pulverizacao #vazao-bico').on('change', calcVolumeAplicacao);
-    $('#volume-pulverizacao #vel-trabalho').on('change', calcVolumeAplicacao);
-    $('#volume-pulverizacao #volume-pulverizacao').on('change', calcVolumeAplicacao);
-    $('#volume-pulverizacao #unidade-area').on('change', calcVolumeAplicacao);
+    $('#volume-pulverizacao #vazao-bico').on('input', calcVolumeAplicacao);
+    $('#volume-pulverizacao #vel-trabalho').on('input', calcVolumeAplicacao);
+    $('#volume-pulverizacao #volume-pulverizacao').on('input', calcVolumeAplicacao);
+    $('#volume-pulverizacao #unidade-area').on('input', calcVolumeAplicacao);
     
     //calculo da quantidade de produto no tanque
-    $('#dosagem #capacidade').on('change', calcQtdProdutoTanque);
-    $('#dosagem #dose').on('change', calcQtdProdutoTanque);
-    $('#dosagem #volume').on('change', calcQtdProdutoTanque);
-    $('#dosagem #unidade-area').on('change', calcQtdProdutoTanque);
+    $('#dosagem #capacidade').on('change keyup input', calcQtdProdutoTanque);
+    $('#dosagem #dose').on('change keyup input', calcQtdProdutoTanque);
+    $('#dosagem #volume').on('change keyup input', calcQtdProdutoTanque);
+    $('#dosagem #unidade-area').on('change keyup input', calcQtdProdutoTanque);
     
 });
 
