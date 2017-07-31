@@ -17,12 +17,15 @@ import VueRouter from 'vue-router';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Example from './components/Example';
+import Pulverizador from './components/Pulverizador';
 import About from './components/About';
 
 Vue.component('about', require('./components/About.vue'));
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('pulverizador', require('./components/Pulverizador.vue'));
 Vue.component('navigation', require('./components/Navigation.vue'));
+Vue.component('material-select', require('./components/form/input/MaterialSelect.vue'));
+Vue.component('input-field', require('./components/form/input/InputField.vue'));
+
 
 
 
@@ -30,7 +33,7 @@ Vue.use(VueRouter);
 const routes = [
 	{
 		path: '/',
-		component: Example
+		component: Pulverizador
 	},
 	{
 		path: '/about',
